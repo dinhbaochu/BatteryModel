@@ -104,8 +104,8 @@ param.len_pouch = 160e-6; % ref: "Li-Ion Pouch Cells for Vehicle Applications—
 % at 100%C down to an (arbitrary) cut-off of 2.7V for the LCO cell with parameters described here (Northrop cell).
 % This represents an indirect measure of capacity of one electrochemical layer (Al-Pos-Neg-Sep-Cu combo)(that is simulated by the original Newman model as published in typical literature.)
 
-param.i_1C_density = 29.23*5; % [A/m^2]
-param.no_of_layers_Northrop_cell = 79;     % Assumed no. of layers for LIONSIMBA's reference cell (Northrop cell), obtained by hand-computing the number of layers that can be fit inside a 10mm pouch.
+param.i_1C_density = 29.23; % [A/m^2]
+param.no_of_layers_Northrop_cell = 49;     % Assumed no. of layers for LIONSIMBA's reference cell (Northrop cell), obtained by hand-computing the number of layers that can be fit inside a 10mm pouch.
 param.t_stack = param.no_of_layers_Northrop_cell*(param.len_p + param.len_s + param.len_n) + (ceil(0.5*(param.no_of_layers_Northrop_cell + 1))*param.len_cu) + ceil(0.5*param.no_of_layers_Northrop_cell)*param.len_al; % length/thickness inside pouch available for filling up with unit cells (i.e. the stack of layers)
 assumed_cell_capacity_Ah = 60; % Assumed Ah of a cell constructed with multiple layers (each layer having the parameters given in this file).
 
@@ -119,7 +119,7 @@ param.overall_surface_area_for_given_layers = I_1C_cell_amps/param.i_1C_density;
 %% Thermal conductivities [ W / (m K) ]
 
 % Aluminium current collector
-param.Lambda_al = 27;  % From material datasheets and standard scientific tables
+param.Lambda_al = 273;  % From material datasheets and standard scientific tables
 % Positive electrode
 param.Lambda_p  = 2.1;
 % Separator
